@@ -4,9 +4,9 @@ defmodule RumblWeb.Application do
   def start(_type, _args) do
     children = [
       RumblWeb.Telemetry,
-      RumblWeb.Endpoint,
-      {Phoenix.PubSub, name: RumblWeb.PubSub},
-      RumblWeb.Presence
+      {Phoenix.PubSub, name: RumblWeb.PubSub, adapter: Phoenix.PubSub.PG2},
+      RumblWeb.Presence,
+      RumblWeb.Endpoint
     ]
 
     opts = [strategy: :one_for_one, name: RumblWeb.Supervisor]

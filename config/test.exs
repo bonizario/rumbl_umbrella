@@ -23,3 +23,8 @@ config :logger, level: :warn
 
 # Ease up the number of hashing rounds to speed up tests
 config :pbkdf2_elixir, :rounds, 1
+
+# Wolfram HTTP client stub configuration
+config :info_sys, :wolfram,
+  app_id: "1234",
+  http_client: InfoSys.Test.HTTPClient
